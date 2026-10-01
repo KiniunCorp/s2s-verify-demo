@@ -1,10 +1,10 @@
 {
-  "name": "bramo-verify-demo",
+  "name": "s2s-verify-demo",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "A tiny planted repo. Run bramo-verify and watch an agent get caught.",
+  "description": "A tiny planted repo. Run s2s-verify and watch an agent get caught.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

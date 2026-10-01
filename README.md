@@ -1,11 +1,11 @@
-# bramo-verify-demo
+# s2s-verify-demo
 
 A deliberately planted repository. It exists so you can watch
-[bramo-verify](https://bramo.ai/docs/verify) catch an AI agent in about twenty
-seconds, without pointing a stranger's CLI at your own work.
+[s2s-verify](https://github.com/KiniunCorp/s2s-verify) catch an AI agent in about
+twenty seconds, without pointing a stranger's CLI at your own work.
 
 ```bash
-git clone --depth 2 https://github.com/KiniunCorp/bramo-verify-demo demo && cd demo && npx --yes bramo-verify
+git clone --depth 2 https://github.com/KiniunCorp/s2s-verify-demo demo && cd demo && npx --yes s2s-verify
 ```
 
 No install, no account, no API key, no network calls beyond fetching the two
@@ -34,7 +34,7 @@ for `visa`, `mastercard` and `amex` — the three networks anyone would test —
 and silently returns the Visa rate for everything else. Discover, JCB and every
 future network get billed wrong, and no test fails.
 
-## What bramo-verify does with that
+## What s2s-verify does with that
 
 It spawns `npm test` itself and reads the exit code it actually saw, rather than
 believing the commit message. Exit 0 having run zero tests is reported as
@@ -46,9 +46,14 @@ Expected verdict: `FINDINGS`, exit code 1.
 ## Fix it and watch the verdict change
 
 Write a real test, point the `test` script at it, and make `networkFeeBps` fail
-loudly on an unknown network. Run `npx bramo-verify` again.
+loudly on an unknown network. Run `npx s2s-verify` again.
 
 ---
 
-Part of [Bramo](https://bramo.ai) — the independent supervision layer for people
-who build with AI coding agents. CLI reference: <https://bramo.ai/docs/verify>.
+s2s-verify was called bramo-verify until 0.3.1. It is part of the s2s
+(spec-to-ship) family. CLI reference: the
+[s2s-verify README on npm](https://www.npmjs.com/package/s2s-verify).
+
+The planted commit is always the newest one. When this repo needs a change, the
+change lands in a commit that also reverts the planted one, and the planted
+commit is then re-applied on top, so `--depth 2` keeps working.
